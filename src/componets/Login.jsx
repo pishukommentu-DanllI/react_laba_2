@@ -43,7 +43,7 @@ export const Login = ({setUser}) => {
     }
   return (
     <>
-    <form className='BlockInput'>
+    <form className='BlockInput' onSubmit={e => e.preventDefault()}>
         <input value={name} placeholder='Name' onChange={e => setName(e.target.value)} style={!valid ? {backgroundColor: 'rgb(255, 124, 75)'} : {}}/>
         <input value={password} type='password' placeholder='Password' onChange={e => setPassword(e.target.value)} style={!valid ? {backgroundColor: 'rgb(255, 124, 75)'} : {}}/>
         <div className='BlockBtnLog'>

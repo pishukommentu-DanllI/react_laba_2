@@ -65,7 +65,7 @@ export const Registr = ({setUser}) => {
       }
   return (
     
-    <form className='BlockInput'>
+    <form className='BlockInput' onSubmit={e => e.preventDefault()}>
         <input value={name} placeholder='Name' onChange={e => {setName(e.target.value);setNameIsValid(ValidName(e.target.value))}} style={!nameIsValid ? {backgroundColor: 'rgb(255, 124, 75)'} : {}}/>
         <p style={nameIsValid? {display:'none'} : {color:'red'}}>Не верное имя пользователя</p>
         <input value={email} placeholder='Email' onChange={e => {setEmail(e.target.value);setEmailIsValid(ValidEmail(e.target.value))}} style={!emailIsValid ? {backgroundColor: 'rgb(255, 124, 75)'} : {}}/>

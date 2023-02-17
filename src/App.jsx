@@ -8,9 +8,10 @@ import { Registr } from './componets/Registr';
 import { LogOut } from './componets/LogOut';
 import { Login } from './componets/Login';
 import { Header } from './componets/Header';
-import { nanoid } from 'nanoid'
+// import { nanoid } from 'nanoid'
 import { Carts } from './componets/Carts';
 import { Order } from './componets/Order';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -28,6 +29,8 @@ function App() {
   const [IsPostLoading, setIsPostLoading] = useState(false);
 
   const [orders, setOrders] = useState([]);
+
+  const navigate = useNavigate();
 
   let animateButton = function(e) {
 
@@ -137,7 +140,7 @@ function App() {
   function make_Order() {
     setOrders([...carts, ...orders]);
     setCarts([]);
-  
+    navigate('/order', { replace: true });
     setMessage("Make order")
     ShowMessage();
   }
